@@ -1,0 +1,233 @@
+html{
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    background-repeat: no-repeat;
+    color:rgb(156, 156, 156);
+
+}
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header ,header div:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.scroll{
+    scroll-snap-align: start;
+}
+header div:first-child{
+    margin-left: 30px;
+}
+header div:nth-child(2){
+    width: 50vw;
+    margin-right: 20px;
+    height: 100%;
+    justify-content: space-evenly;
+    
+}
+div span:first-child{
+    margin: 0;
+}
+div span{
+    display: flex;
+    width: 10vw;
+    align-items: center;
+    justify-content: center;
+    
+}
+header{
+    font-family:  'Calibri';
+    font-weight: bold;
+    font-size: 1.5em;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+}
+.bg0{
+    transition: 2s;
+    z-index: 8;
+}
+.bg1{
+    background-color: rgba(0, 168, 8, 0.9);
+    transition: 2s;
+    z-index: 8;
+}
+.bg2{
+    background-color: rgba(233, 132, 0, 0.911);
+    box-shadow: -10px 0px 20px 20px rgba(233, 132, 0, 0.911);
+    transition: 2s;
+    z-index: 8;
+}
+.bg3{
+    background-color: rgba(75, 40, 0, 0.911);
+    box-shadow: -10px 0px 20px 20px rgba(75, 40, 0, 0.911);
+    transition: 2s;
+    z-index: 8;
+}
+.bg4{
+    background-color: rgba(165, 22, 165, 0.911);
+    box-shadow: -10px 0px 20px 20px rgba(165, 22, 165, 0.911);
+    z-index: 8;
+    transition: 2s;
+}
+header div a:last-child{
+    background: white;
+    border-radius: 15px;
+    height: 50%;
+    display: flex;
+    color: black;
+    justify-content: center;
+    transition:0.8s;
+}
+header div a:last-child:hover{
+    color: white;
+    background-color: black;
+    transition:0.8s;
+}
+a{
+    color:rgb(156, 156, 156);
+    text-decoration: none;
+    transition:0.8s;
+    
+}
+header a:hover{
+    color:white;
+    transition: 0.8s;
+}
+section{
+    height: 100vh;
+    overflow: hidden;
+}
+section >div{
+    display: flex;
+    width: 500%;
+    height: 100%;
+}
+ input{
+    display: none;
+}
+section div div{
+    height: 100%;
+    width: 100%;
+}
+section >div >div{
+    background-image: url(../../images/wallpaperbetter.com_1920x1080.jpg);
+    background-size: cover;
+    width: 20%;
+}
+section >div>div>div{  
+    width: 40%;
+    color: white;
+    height: 95%;
+    margin-left: 60%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5em;
+    background-color: rgba(0, 168, 8, 0.9);
+    border-radius: 15px 0 0 0;
+}
+section>div>div>div>p{
+    text-align: center;
+    padding-top: 60px;
+}
+section div a{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    margin-top: 60px;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    right: 19%;
+    top: 80%;
+    transition: 0.8s;
+}
+section div a:hover{
+    color: white;
+    background-color: black;
+    transition: 0.8s;
+}
+.navigation-auto{
+    display:flex;
+    position: absolute;
+    width: 100%; 
+    margin-top: -80px;
+    justify-content: center;
+
+}
+.navigation-auto div{
+    border: 1px rgb(255, 255, 255) solid;
+    border-radius: 50%;
+    padding: 8px;
+    transition: 1s;
+}
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: rgb(255, 255, 255);
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: rgb(255, 255, 255);
+
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: rgb(255, 255, 255);
+
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background-color: rgb(255, 255, 255);
+
+}
+.navigation-manual{
+    display:flex;
+    position: absolute;
+    width: 100%;
+    margin-top: -80px;
+    justify-content: center;
+
+}
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+.manual-btn:hover{
+background-color: rgb(255, 255, 255);
+}
+.first{
+    transition:1s;
+}
+#im1{
+margin-left: 0;
+}
+#im2{
+margin-left: -20%;
+}
+#im3{
+margin-left: -40%;
+} 
+#im4{
+margin-left: -60%;
+}
+.manual-btn{
+    border: 1px rgb(156, 156, 156) solid;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    transition: 1s;
+}
+footer{
+    background-color: aqua;
+    width: 100%;
+    height: 150px;
+}
