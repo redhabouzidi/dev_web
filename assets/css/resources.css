@@ -1,0 +1,71 @@
+
+body{
+    background-color: black;
+    color: white;
+    
+}
+#container{
+    margin-top: 120px;
+}
+#container section{
+    height: 50vh;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+}
+#container section .version{
+    height: 60%;
+    border-radius:15px 15px 0px 0px;
+    padding: 15px;
+    background-color: green;
+}
+#container section .commentaire{
+    height: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgba(0, 113, 0, 0.427);
+    margin-top: 150px;
+    border-radius: 15px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.vision{
+    border-radius: 0px 0px 15px 15px;
+    padding: 15px;
+    background-color: grey;
+    height: 30%;
+}
+.vision input{
+    width: 80%;
+    height: 2em;
+}
+#container a{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+    background-color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 2em;
+    border-radius: 5px;
+    transition: 0.8s;
+}
+#container a:hover{
+    
+    background-color: black;
+    color: white;
+    transition: 0.8s;
+}
+.commentaire div:not(:last-child){
+    padding: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}

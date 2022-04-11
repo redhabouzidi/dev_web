@@ -3,7 +3,6 @@ var time=setInterval(timer,10000);
 var head=document.getElementsByTagName("header");
 let item=document.getElementsByClassName("first");
 radio[0].checked="true";
-console.log(head[0].tagName+"bon");
 var counter=1;
 function condition(){
     if(Math.round(scrollY)!=0){
@@ -86,13 +85,13 @@ radio[2].addEventListener("click",function(){
     counter=3;
      time=setInterval(timer,10000);
      condition();
-     console.log(head[0].class);
 });
 radio[3].addEventListener("click",function(){
     clearInterval(time);
     counter=0;
      time=setInterval(timer,10000);
      condition();
-     console.log(head[0].class);
 });
 document.addEventListener("scroll",condition);
+
+console.log(document.getElementsByTagName("a[href='connexionSpace.php']").length+"bon");

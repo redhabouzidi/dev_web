@@ -1,25 +1,22 @@
+<?php  session_start();
+    if(!isset($_SESSION["connected"])){$_SESSION["connected"]="false";}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    
 </head>
 <body>
-    <header class="bg3">
-        <div >
-            logo
-        </div>
-        <div>
-            <a href=""><span>acceuil</span></a>
-            <a href=""><span>ressources</span></a>
-           <a href=""><span>offres</span></a>
-            <a href=""><span>download</span></a>
-            <a href=""><span>Connexion</span></a>
-        </div>
-    </header>
+    <?php include_once "header.php";
+    ?>
     <div class="container">
             <input type="radio" name="ch1" class="radio" id="radio1">
             <input type="radio" name="ch1" class="radio" id="radio2">
@@ -96,15 +93,19 @@
 </section>
 <footer class="scroll">
 <div>
-    <div></div>
+    <div>report a bug</div>
     <div></div>
     <div></div>
 </div>
 <div>
-
+Made by demonow
 </div>
 <div>
-
+<div><i class="mdi mdi-facebook"></i></div>
+<div><i class="mdi mdi-instagram"></i></div>
+<div>
+    <i class="mdi mdi-twitter"></i>
+</div>
 </div>
 </footer>
 <script src="assets/js/script.js"></script>

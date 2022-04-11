@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image:url(../../images/wallpaperbetter.com_1920x1080.jpg);
+    background-size: cover;
+    
+}
+form div{
+    display: flex;
+    
+}
+input[type="submit"]{
+    border-style: none;
+    border-radius: 15px;
+    width: 120px;
+    height: 20px;
+    background-color: black;
+    color: white;
+    font-family: fantasy;
+    padding: 0;
+}
+input[type="submit"]:hover{
+    color: black;
+    background-color: white;
+    transition: 0.8s;
+    border-style: none;
+}
+form .disform{
+    margin-top: 0;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form div>label:not(last-child){
+    margin-bottom: 30px;
+}
+form input:not([type="submit"]){
+    margin-bottom: 30px;
+}
+input:not([type="submit"]){
+    
+    width:400px;
+    
+}
+form{
+    color: white;
+    font-size: 20px;
+    border-radius: 15px;
+    margin-top: 100px;
+    background-color: rgba(0, 184, 24, 0.801);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80vh;
+
+}
+form >div:first-child{
+    background-color: black;
+    border-radius: 15px;
+    padding: 30px;
+}
+form >div:nth-child(2){
+    margin-top: 20px;
+}
+.error{
+    border-color: red;
+}
