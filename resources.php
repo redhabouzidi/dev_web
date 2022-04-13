@@ -3,7 +3,7 @@
     if((!isset($_SESSION))||$_SESSION["connected"]==false){
         header("Location:index.php");
     }
-
+    $supress="<a>supprimer</a>"
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,10 @@
     <link rel="stylesheet" href="assets/css/resources.css">
 </head>
 <body>
-    <?php include "header.php"?>
+    <?php
+    include "header.php";
+    echo('<input type="hidden" id="session" value='.$_SESSION["id"].'>');
+    ?>
 <div id="container">
 
 </div>

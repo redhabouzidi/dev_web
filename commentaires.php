@@ -1,6 +1,7 @@
 <?php
-// fichier appelé par l'appel AJAX pour charger les commentaires dans le fichier principal
+session_start();
 try {
+    
     include "pdo.php";
     $com = $pdo->query('SELECT * FROM commentaire')->fetchAll();
     echo json_encode($com);

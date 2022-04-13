@@ -1,6 +1,5 @@
 
 document.getElementsByTagName("header")[0].setAttribute("class","")
-
 document.addEventListener("DOMContentLoaded",function(){
     fetch("articles.php",{method:"post",headers:{"content-Type":"application/json",redirect:"follow",mode:"cors"}}).
     then((rep)=>rep.json().then((data)=>{
@@ -17,8 +16,9 @@ document.addEventListener("DOMContentLoaded",function(){
             commentaires.setAttribute("id","com"+article.id);
             let inp=document.createElement("input");
             inp.setAttribute("type","texte");inp.setAttribute("id","inp"+article.id);inp.setAttribute("name","contenu");
-            let a=document.createElement("a");
-            a.innerHTML="send";
+            let a=document.createElement("input");
+            a.setAttribute("type","submit")
+            a.value="send";
             let form=document.createElement("form");
             form.setAttribute("id","form"+article.id);
             cont.appendChild(sect);
@@ -43,15 +43,32 @@ document.addEventListener("DOMContentLoaded",function(){
                     if(com.id_art==article.id){
                     let page=document.createElement("p");
                     let div=document.createElement("div");
+                    let userid=document.createElement("input");
+                    userid.setAttribute("type","hidden");
+                    userid.setAttribute("value",com.id_pro);
+                    userid.setAttribute("name","id_pro");
                     page.innerHTML=com.username+' : '+com.contenu;
+                    page.setAttribute("class","com");
+                    
+                    if(document.getElementById("session").value==com.id_per){
+                        let frm=document.createElement("form");
+                        let supr=document.createElement("a");
+                        supr.innerHTML="delete";
+                        supr.setAttribute("name","id_com");
+                        supr.setAttribute("value",com.id);
+                        frm.appendChild(supr);
+                        frm.setAttribute("id","id_com"+com.id);
+                        page.appendChild(frm);
+                        alert(document.getElementById("session").value==com.id_per);
+                    }
                     comp.appendChild(page);
                     commentaires.appendChild(div);
                     }
 
                 })
             }))
-             a.addEventListener("click",function(event){
-                 event.preventDefault();
+             form.addEventListener("submit",function(eve){
+                 eve.preventDefault();
                 if(inp.value.length!=0){
                  let comp=document.getElementById("com"+article.id);
                  comp.innerHTML=("");
@@ -86,7 +103,6 @@ document.addEventListener("DOMContentLoaded",function(){
                     
                 });
             }
-                
              })
 
         })

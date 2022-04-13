@@ -18,6 +18,3 @@ $password = $_POST["password"];
         $_SESSION["erreur"]=true;
         header("Location: http://localhost/Projet/ConnexionSpace.php");
     }   
-
-
- 

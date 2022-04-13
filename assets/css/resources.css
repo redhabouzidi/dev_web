@@ -41,11 +41,29 @@ body{
     background-color: grey;
     height: 30%;
 }
-.vision input{
+.vision input[type="texte"]{
     width: 80%;
     height: 2em;
 }
-#container a{
+.vision input[type="submit"]{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+    background-color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 2em;
+    border-style: none;
+    border-radius: 5px;
+    transition: 0.8s;
+}
+.vision input[type="submit"]:hover{
+    background-color: black;
+    color: white;
+    transition: 0.8s;
+}
+#container form a{
     cursor: pointer;
     text-decoration: none;
     color: black;
@@ -68,4 +86,23 @@ body{
     width: 100%;
     height: 1px;
     background-color: white;
+}
+.com{
+    display: flex;
+    justify-content: space-between;
+}
+.com a{
+    cursor:pointer;
+    width:5em;
+    text-align: center;
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+    transition:0.8s;
+}
+.com a:hover{
+    background-color: black;
+    color: white;
+    transition: 0.8s;
+    
 }
