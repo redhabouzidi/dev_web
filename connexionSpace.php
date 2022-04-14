@@ -29,8 +29,8 @@ session_start();
         
     </div>
     <?php 
-        if(isset($_SESSION)&& $_SESSION["erreur"]==true){
-        echo("<p style='color:red'>Mot de passe ou adresse mail invalide</p>");
+        if(isset($_SESSION["erreur"])&& $_SESSION["erreur"]==true){
+        echo("<p style='color:red'>Mot de passe ou nom d'utilisateur invalide</p>");
         $_SESSION["erreur"]=false;
     }
         ?>

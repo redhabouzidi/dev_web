@@ -44,6 +44,9 @@ input:not([type="submit"]){
     width:400px;
     
 }
+#er{
+    color:red;
+}
 form{
     color: white;
     font-size: 20px;

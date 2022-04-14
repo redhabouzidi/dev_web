@@ -27,7 +27,7 @@
             <input type="password" name="cpassword" id="cpassword" placeholder="****************" >
         </div>
     </div>
-    <p id="er"></p>
+    <p id="er"><?php if(isset($_SESSION["message"])){echo($_SESSION["message"]);$_SESSION["message"]="";}?></p>
     <div>
     <input type="submit" name="" id="" value="connexion">
 </div>

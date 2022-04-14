@@ -2,8 +2,8 @@
 include "pdo.php";
 session_start();
 $id=$_POST["id_art"];
-$content=$_POST["contenu"];
-$username=$_SESSION["username"];
+$content=htmlspecialchars($_POST["contenu"]);
+$username=htmlspecialchars($_SESSION["username"]);
 echo(json_encode($username));
 if(strlen($content)!=0){
 try{

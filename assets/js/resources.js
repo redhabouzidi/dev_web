@@ -8,7 +8,30 @@ document.addEventListener("DOMContentLoaded",function(){
             let sect=document.createElement("section");
             let ver=document.createElement("div");
             ver.setAttribute("class","version");
-            ver.innerHTML=article.contenu;
+            let el=document.createElement("p");
+            el.innerHTML=article.contenu
+            ver.appendChild(el);
+            if(document.getElementById("session").value==1){
+                let forsup=document.createElement("form");
+                let supinp=document.createElement("input");
+                supinp.setAttribute("type","hidden");
+                supinp.setAttribute("name","id_art");
+                supinp.value=(article.id);
+                let adsup=document.createElement("input");
+                adsup.setAttribute("type","submit");
+                adsup.value="delete";
+                ver.appendChild(forsup);
+                forsup.appendChild(supinp);
+                forsup.appendChild(adsup);
+                forsup.addEventListener("submit",(event)=>{
+                    event.preventDefault();
+                    fetch("articsup.php",{
+                        method:'post',
+                        body: new FormData(forsup)
+                    });
+                    sect.remove();
+                })
+            }
             let vis=document.createElement("div");
             vis.setAttribute("class","vision");
             let commentaires=document.createElement("div");
@@ -43,23 +66,30 @@ document.addEventListener("DOMContentLoaded",function(){
                     if(com.id_art==article.id){
                     let page=document.createElement("p");
                     let div=document.createElement("div");
-                    let userid=document.createElement("input");
-                    userid.setAttribute("type","hidden");
-                    userid.setAttribute("value",com.id_pro);
-                    userid.setAttribute("name","id_pro");
                     page.innerHTML=com.username+' : '+com.contenu;
                     page.setAttribute("class","com");
                     
-                    if(document.getElementById("session").value==com.id_per){
+                    if(document.getElementById("session").value==com.id_per||document.getElementById("session").value==1){
                         let frm=document.createElement("form");
                         let supr=document.createElement("a");
+                        let iddet=document.createElement("input");
                         supr.innerHTML="delete";
-                        supr.setAttribute("name","id_com");
-                        supr.setAttribute("value",com.id);
+                        iddet.setAttribute("name","id_com");
+                        iddet.setAttribute("type","hidden");
+                        iddet.setAttribute("value",com.id);
                         frm.appendChild(supr);
+                        frm.appendChild(iddet);
                         frm.setAttribute("id","id_com"+com.id);
                         page.appendChild(frm);
-                        alert(document.getElementById("session").value==com.id_per);
+                        supr.addEventListener("click",function(event){
+                            event.preventDefault();
+                            fetch("supcom.php",{
+                                method:"post",
+                                body: new FormData(frm)
+                            });
+                            page.remove();
+                            div.remove();
+                        })
                     }
                     comp.appendChild(page);
                     commentaires.appendChild(div);
@@ -78,14 +108,38 @@ document.addEventListener("DOMContentLoaded",function(){
                     method:"post",headers:{"content-Type":"application/json",redirect:"follow",mode:"cors"}
                 }).then((reponse)=>reponse.json().then((comment)=>{
                     comment.forEach(com=>{
-                        
                         if(com.id_art==article.id){
-                        let page=document.createElement("p");
-                        let div=document.createElement("div");
-                        page.innerHTML=com.username+' : '+com.contenu;
-                        comp.appendChild(page);
-                        commentaires.appendChild(div);
-                        }
+                            let page=document.createElement("p");
+                            let div=document.createElement("div");
+                            page.innerHTML=com.username+' : '+com.contenu;
+                            page.setAttribute("class","com");
+                            
+                            if(document.getElementById("session").value==com.id_per){
+                                let frm=document.createElement("form");
+                                let supr=document.createElement("a");
+                                let iddet=document.createElement("input");
+                                supr.innerHTML="delete";
+                                iddet.setAttribute("name","id_com");
+                                iddet.setAttribute("type","hidden");
+                                iddet.setAttribute("value",com.id);
+                                frm.appendChild(supr);
+                                frm.appendChild(iddet);
+                                frm.setAttribute("id","id_com"+com.id);
+                                page.appendChild(frm);
+                                supr.addEventListener("click",function(event){
+                                    event.preventDefault();
+                                    fetch("supcom.php",{
+                                        method:"post",
+                                        body: new FormData(frm)
+                                    });
+                                    page.remove();
+                                    div.remove();
+                                })
+                            }
+                            comp.appendChild(page);
+                            commentaires.appendChild(div);
+                            }
+                        
 
                     })
                 }));
@@ -96,17 +150,36 @@ document.addEventListener("DOMContentLoaded",function(){
                     let page=document.createElement("p");
                     let div=document.createElement("div");
                     page.innerHTML=data+' : '+inp.value;
-                    comp.appendChild(page);
-                    commentaires.appendChild(div);
+                    page.setAttribute("class","com");
                     inp=document.getElementById("inp"+article.id);
                     inp.value=("");
-                    
+                    let frm=document.createElement("form");
+                    let supr=document.createElement("a");
+                    let iddet=document.createElement("input");
+                    supr.innerHTML="delete";
+                    iddet.setAttribute("name","id_com");
+                    iddet.setAttribute("type","hidden");
+                    iddet.setAttribute("value",data.id);
+                    frm.appendChild(supr);
+                    frm.appendChild(iddet);
+                    frm.setAttribute("id","id_com"+data.id);
+                    page.appendChild(frm);
+                    supr.addEventListener("click",function(event){
+                        event.preventDefault();
+                        fetch("suplast.php").then(resp=>resp.text());
+                        page.remove();
+                        div.remove();
+                    })
+                    comp.appendChild(page);
+                    commentaires.appendChild(div);
+                    commentaires.scrollTop=commentaires.scrollHeight;
                 });
             }
+            
              })
 
         })
     }))
-    
+
 })
 

@@ -4,5 +4,6 @@ $_SESSION["connected"]=false;
 $_SESSION["username"]=null;
 $_SESSION["id"]=null;
 $_SESSION["error"]=false;
+$_SESSION["admin"]=false;
 header("Location:index.php");
 ?>

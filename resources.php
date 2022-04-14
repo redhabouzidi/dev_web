@@ -18,10 +18,24 @@
 <body>
     <?php
     include "header.php";
+    //Necessaire pour recuperer sur le js la variable 
     echo('<input type="hidden" id="session" value='.$_SESSION["id"].'>');
+    //partie admin pour insertion d'articles
+    
+    
     ?>
+    
 <div id="container">
+<?php
+if(isset($_SESSION["admin"])&&$_SESSION["admin"]==true){
+    echo("<form id='admin' action='articin.php' method='post'>
+    <input type='text' name='nom' placeholder='article name'>
+    <textarea name='contenu' id='' cols='30' rows='10' placeholder='article content'></textarea>
+    <input type='submit' value='add'>
+    </form>");
+}
 
+    ?>
 </div>
     <script src="assets/js/resources.js"></script>
 </body>
