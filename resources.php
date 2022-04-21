@@ -12,7 +12,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/resources.css">
 </head>
 <body>
@@ -37,6 +36,7 @@ if(isset($_SESSION["admin"])&&$_SESSION["admin"]==true){
 
     ?>
 </div>
+    <?php include "footer.php"?>
     <script src="assets/js/resources.js"></script>
 </body>
 </html>

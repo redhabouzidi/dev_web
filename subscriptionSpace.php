@@ -31,8 +31,11 @@
     <div>
     <input type="submit" name="" id="" value="connexion">
 </div>
-        <p>already have an account ? click <a href="connexionSpace.php">here</a> to connect</p>
-        </form>
+<p>already have an account ? click <a href="connexionSpace.php">here</a> to connect</p>
+</form>
+<?php 
+include "footer.php";
+?>
     <script src="assets/js/inscription.js"></script>
 </body>
 </html>

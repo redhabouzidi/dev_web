@@ -39,6 +39,8 @@ session_start();
 </div>
         <p>don't have an account yet ? click <a href="subscriptionSpace.php">here</a> to subscribe</p>
         </form>
-    
+<?php 
+include "footer.php";
+?>
 </body>
 </html>

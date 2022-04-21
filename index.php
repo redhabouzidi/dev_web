@@ -9,9 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/header.css">
     
 </head>
 <body>
@@ -91,23 +89,9 @@
         </div>
     </div>
 </section>
-<footer class="scroll">
-<div>
-    <div>report a bug</div>
-    <div></div>
-    <div></div>
-</div>
-<div>
-Made by demonow
-</div>
-<div>
-<div><i class="mdi mdi-facebook"></i></div>
-<div><i class="mdi mdi-instagram"></i></div>
-<div>
-    <i class="mdi mdi-twitter"></i>
-</div>
-</div>
-</footer>
+<?php 
+include "footer.php";
+?>
 <script src="assets/js/script.js"></script>
 </body>
 </html>

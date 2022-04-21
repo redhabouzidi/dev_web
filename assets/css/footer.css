@@ -1,0 +1,29 @@
+footer{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(24, 24, 24);
+    width: 100%;
+    height: 150px;
+}
+footer div{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+footer div div{
+    display: block;
+}
+.mdi-facebook{
+    color:blue;
+}
+.mdi-instagram{
+    color: pink;
+}
+.mdi-twitter{
+    color:cyan;
+}
+footer a{
+    text-decoration: none;
+    color:rgb(156, 156, 156);
+}
