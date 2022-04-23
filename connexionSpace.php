@@ -7,7 +7,6 @@ session_start();
     <title>Document</title>
     
     
-    <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/subscriptionSpace.css">
 </head>
 <body>

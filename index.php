@@ -1,5 +1,5 @@
 <?php  session_start();
-    if(!isset($_SESSION["connected"])){$_SESSION["connected"]="false";}
+    if(!isset($_SESSION["connected"])){$_SESSION["connected"]=false;}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +30,7 @@
                 <a href="#section1">download</a>
                 </div>
             </div>
-            <div >
+            <div>
                 <div>
                 <p><b>Nouvelles mises a jours</b><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quibusdam dolorem voluptatibus nisi quis, tenetur voluptas eaque esse, alias nemo, labore cum iste ab vero commodi omnis doloribus autem fugiat?</p>
                 <a href="#section2">download</a>

@@ -137,10 +137,3 @@ margin-left: -40%;
 #im4{
 margin-left: -60%;
 }
-.manual-btn{
-    border: 1px rgb(156, 156, 156) solid;
-    border-radius: 50%;
-    padding: 8px;
-    cursor: pointer;
-    transition: 1s;
-}

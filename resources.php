@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if((!isset($_SESSION))||$_SESSION["connected"]==false){
+    if((!isset($_SESSION["connected"])&&isset($_SESSION["id"]))||$_SESSION["connected"]==false){
         header("Location:index.php");
     }
     $supress="<a>supprimer</a>"
