@@ -7,7 +7,7 @@
     $statement->bindValue("nom",$nom);
     $statement->bindValue("contenu",$contenu);
     $statement->execute();
-    header("Location:resources.php");
+    header("Location:../../resources.php");
 } catch (PDOException $exception) {
     http_response_code(400);
     echo json_encode(["error"=> $exception->getMessage()]);

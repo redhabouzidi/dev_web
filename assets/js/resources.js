@@ -1,7 +1,7 @@
 
 document.getElementsByTagName("header")[0].setAttribute("class","")
 document.addEventListener("DOMContentLoaded",function(){
-    fetch("articles.php",{method:"post",headers:{"content-Type":"application/json",redirect:"follow",mode:"cors"}}).
+    fetch("assets/php/articles.php",{method:"post",headers:{"content-Type":"application/json",redirect:"follow",mode:"cors"}}).
     then((rep)=>rep.json().then((data)=>{
         let cont=document.getElementById("container");
         data.forEach(article=>{
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded",function(){
                 forsup.appendChild(adsup);
                 forsup.addEventListener("submit",(event)=>{
                     event.preventDefault();
-                    fetch("articsup.php",{
+                    fetch("assets/php/articsup.php",{
                         method:'post',
                         body: new FormData(forsup)
                     });
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded",function(){
             form.appendChild(inp);
             form.appendChild(a);
             let temp=article.id;
-            fetch("commentaires.php",{
+            fetch("assets/php/commentaires.php",{
                 method:"post",headers:{"content-Type":"application/json",redirect:"follow",mode:"cors"}
             }).then((reponse)=>reponse.json().then((comment)=>{
                 let comp=document.getElementById("com"+article.id);
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded",function(){
                         page.appendChild(frm);
                         supr.addEventListener("click",function(event){
                             event.preventDefault();
-                            fetch("supcom.php",{
+                            fetch("assets/php/supcom.php",{
                                 method:"post",
                                 body: new FormData(frm)
                             });
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded",function(){
                  comp.innerHTML=("");
                 
                 
-                fetch("commentaires.php",{
+                fetch("assets/php/commentaires.php",{
                     method:"post",headers:{"content-Type":"application/json",redirect:"follow",mode:"cors"}
                 }).then((reponse)=>reponse.json().then((comment)=>{
                     comment.forEach(com=>{
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded",function(){
                                 page.appendChild(frm);
                                 supr.addEventListener("click",function(event){
                                     event.preventDefault();
-                                    fetch("supcom.php",{
+                                    fetch("assets/php/supcom.php",{
                                         method:"post",
                                         body: new FormData(frm)
                                     });
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
                     })
                 }));
-                fetch("postcom.php",{
+                fetch("assets/php/postcom.php",{
                     method:'post',
                     body: new FormData(document.getElementById("form"+article.id))
                 }).then(response=> response.json()).then(data=>{
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded",function(){
                     page.appendChild(frm);
                     supr.addEventListener("click",function(event){
                         event.preventDefault();
-                        fetch("suplast.php").then(resp=>resp.text());
+                        fetch("assets/php/suplast.php").then(resp=>resp.text());
                         page.remove();
                         div.remove();
                     })

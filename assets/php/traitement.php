@@ -20,12 +20,12 @@ try {
     $statement->bindValue('mail', $mail);
     $statement->execute();
 
-    header('Location: index.php');
+    header('Location: ../../index.php');
 } catch (PDOException $exception) {
     var_dump($exception->getMessage());
 }
 }else{
-    header('Location: subscriptionSpace.php');
+    header('Location: ../../subscriptionSpace.php');
     if($exitu!=null){
     $_SESSION["message"]=$trad["uusr"];
     }else if($exitm!=null){

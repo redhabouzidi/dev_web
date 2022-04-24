@@ -17,9 +17,9 @@ $tuple=$compte->fetch();
         }else{
             $_SESSION["admin"]=false;
         }
-        header("Location: index.php");
+        header("Location: ../../index.php");
     }else{
         $_SESSION["connected"]=false;
         $_SESSION["erreur"]=true;
-        header("Location: http://localhost/Projet/ConnexionSpace.php");
+        header("Location:../../ConnexionSpace.php");
     }   

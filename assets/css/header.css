@@ -5,6 +5,16 @@ header{
     justify-content: space-between;
     align-items: center;
 }
+header div:first-child a:first-child {
+    color:rgba(0, 150, 0,0.7);
+    background: none;
+    font-size: 2em;
+}
+header div:first-child a:first-child:hover {
+    background: none;
+    color:rgba(0, 170, 0,1);
+}
+
 header .menu{
     display: flex;
     align-items: center;

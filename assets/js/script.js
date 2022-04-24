@@ -77,14 +77,12 @@ radio[0].addEventListener("click",function(){
     counter=1;
      time=setInterval(timer,5000);
      condition();
-     console.log(head[0].class);
 });
 radio[1].addEventListener("click",function(){
     clearInterval(time);
     counter=2;
      time=setInterval(timer,5000);
      condition();
-     console.log(head[0].class);
 });
 radio[2].addEventListener("click",function(){
     clearInterval(time);
@@ -99,7 +97,5 @@ radio[3].addEventListener("click",function(){
      condition();
 });
 document.addEventListener("scroll",condition);
-
-console.log(document.getElementsByTagName("a[href='connexionSpace.php']").length+"bon");
 
 

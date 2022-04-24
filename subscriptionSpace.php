@@ -11,7 +11,7 @@
 <body>
     <?php include_once "header.php"?>
 
-    <form action="traitement.php" method="post">
+    <form action="assets/php/traitement.php" method="post">
         <div>
         <div class="disform">
             <label for="username"><?= $trad["us"]?></label>

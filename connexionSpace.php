@@ -11,10 +11,10 @@ session_start();
     <link rel="stylesheet" href="assets/css/subscriptionSpace.css">
 </head>
 <body>
-<?php include_once "trad.php";?>
+<?php include_once "assets/php/trad.php";?>
     <?php include_once "header.php";?>
 
-    <form action="connexion.php" method="POST" >
+    <form action="assets/php/connexion.php" method="POST" >
         
         <div>
         <div class="disform">
@@ -31,7 +31,7 @@ session_start();
     </div>
     <?php 
         if(isset($_SESSION["erreur"])&& $_SESSION["erreur"]==true){
-        echo("<p style='color:red'>".trad["invalide"]."</p>");
+        echo("<p style='color:red'>".$trad["invalide"]."</p>");
         $_SESSION["erreur"]=false;
     }
         ?>
