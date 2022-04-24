@@ -1,5 +1,5 @@
 <?php 
     session_start();
     $_SESSION["lang"]="en";
-    header("Location:index.php");
+    header("Location:".$_SERVER['HTTP_REFERER']);
 ?>

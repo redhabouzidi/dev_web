@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,14 +11,15 @@ session_start();
     <link rel="stylesheet" href="assets/css/subscriptionSpace.css">
 </head>
 <body>
+<?php include_once "trad.php";?>
     <?php include_once "header.php";?>
 
     <form action="connexion.php" method="POST" >
         
         <div>
         <div class="disform">
-            <label for="username">username</label>
-            <label for="password">password</label>
+            <label for="username"><?= $trad["us"]?></label>
+            <label for="password"><?= $trad["pw"]?></label>
             
         </div>
         
@@ -29,14 +31,14 @@ session_start();
     </div>
     <?php 
         if(isset($_SESSION["erreur"])&& $_SESSION["erreur"]==true){
-        echo("<p style='color:red'>Mot de passe ou nom d'utilisateur invalide</p>");
+        echo("<p style='color:red'>".trad["invalide"]."</p>");
         $_SESSION["erreur"]=false;
     }
         ?>
     <div>
     <input type="submit" name="" id="" value="connexion">
 </div>
-        <p>don't have an account yet ? click <a href="subscriptionSpace.php">here</a> to subscribe</p>
+        <p><?=$trad["comsu"]?><a href="subscriptionSpace.php"><?=$trad["comsu2"]?></a><?=$trad["comsu3"]?></p>
         </form>
 <?php 
 include "footer.php";

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "trad.php";
 include 'pdo.php';
 
 $username = htmlspecialchars($_POST['username']);
@@ -26,10 +27,10 @@ try {
 }else{
     header('Location: subscriptionSpace.php');
     if($exitu!=null){
-    $_SESSION["message"]="l'utilisateur existe déjà";
+    $_SESSION["message"]=$trad["uusr"];
     }else if($exitm!=null){
-    $_SESSION["message"]="l'e-mail a déjà été utilisé" ;  
+    $_SESSION["message"]=$trad["uem"] ;  
     }else{
-        $_SESSION["message"]="donnée invalide";  
+        $_SESSION["message"]=$trad["idata"];  
     }
 }

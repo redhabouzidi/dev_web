@@ -14,10 +14,10 @@
     <form action="traitement.php" method="post">
         <div>
         <div class="disform">
-            <label for="username">username</label>
+            <label for="username"><?= $trad["us"]?></label>
             <label for="e-mail" >E-mail</label>
-            <label for="password">password</label>
-            <label for="cpassword">confirm password</label>
+            <label for="password"><?= $trad["pw"]?></label>
+            <label for="cpassword"><?= $trad["cpw"]?></label>
             
         </div>
         <div class="disform">

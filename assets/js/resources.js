@@ -8,8 +8,11 @@ document.addEventListener("DOMContentLoaded",function(){
             let sect=document.createElement("section");
             let ver=document.createElement("div");
             ver.setAttribute("class","version");
+            let hed=document.createElement("h2");
+            hed.innerHTML=article.nom;
             let el=document.createElement("p");
             el.innerHTML=article.contenu
+            ver.appendChild(hed);
             ver.appendChild(el);
             if(document.getElementById("session").value==1){
                 let forsup=document.createElement("form");
